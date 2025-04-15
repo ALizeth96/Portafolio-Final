@@ -17,14 +17,32 @@ if (character && characterImg) {
   });
 }
 
-// 🌙 Alternar modo oscuro
+// 🌙 Alternar modo oscuro con guardado en localStorage
 function toggleMode() {
   const body = document.body;
   const modeText = document.getElementById('modeText');
+
   body.classList.toggle('dark');
-  modeText.textContent = body.classList.contains('dark') ? 'LIGHT' : 'MODO';
+  const isDark = body.classList.contains('dark');
+
+  // Cambiar texto del botón
+  modeText.textContent = isDark ? 'MODO CLARO' : 'MODO OSCURO';
+
+  // Guardar preferencia en localStorage
+  localStorage.setItem('darkMode', isDark ? 'true' : 'false');
 }
 
+// ✅ Aplicar modo guardado al cargar
+window.addEventListener('DOMContentLoaded', () => {
+  const savedMode = localStorage.getItem('darkMode');
+  const body = document.body;
+  const modeText = document.getElementById('modeText');
 
-
+  if (savedMode === 'true') {
+    body.classList.add('dark');
+    modeText.textContent = 'MODO CLARO';
+  } else {
+    modeText.textContent = 'MODO OSCURO';
+  }
+});
 
