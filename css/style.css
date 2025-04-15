@@ -19,7 +19,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* ========== MODO OSCURO ========== */
+/* ========== MODO OSCURO GENERAL ========== */
 body.dark {
   background-color: #000;
   color: #fff;
@@ -30,19 +30,9 @@ body.dark nav a {
   font-weight: 400;
 }
 
-body.dark .hero-text,
-body.dark .hero-text .subline {
-  color: #fff;
-}
-
-body.dark .character img {
-  filter: brightness(0.9) saturate(0.8);
-}
-
 body.dark header {
   background-color: #111;
   border-bottom: 3px solid #fff;
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 body.dark .logo {
@@ -50,49 +40,17 @@ body.dark .logo {
   color: #000;
 }
 
-body.dark .hero-container::after {
-  background-color: #fff !important;
-}
-
 body.dark footer {
   border-top: 1px solid #444;
   color: #ccc;
 }
 
-body.dark .contact-button,
-body.dark .custom-button {
-  border-color: #fff;
+body.dark .hero-text {
   color: #fff;
 }
 
-body.dark .custom-button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-body.dark .about-content {
-  background-color: #111;
-}
-
-body.dark .about-text {
-  color: #ddd;
-}
-
-body.dark .profile-img {
-  border-color: #888;
-  background-color: #222;
-}
-
-body.dark .about-quote {
-  border-left-color: #555;
-}
-
-body.dark .about-quote blockquote {
-  color: #ddd;
-}
-
-body.dark .about-quote footer {
-  color: #aaa;
+body.dark .character img {
+  filter: brightness(0.9) saturate(0.8);
 }
 
 /* ========== HEADER ========== */
@@ -104,7 +62,7 @@ header {
   border-bottom: 3px solid #ddd;
   width: 100%;
   max-width: 100vw;
-  gap: 20px; /* 👈 separa logo del nav */
+  gap: 20px;
 }
 
 .logo {
@@ -124,7 +82,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 20px;
-  transition: all 0.3s ease;
   min-width: 300px;
 }
 
@@ -135,10 +92,6 @@ nav a {
   font-weight: 400;
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   padding: 4px 0;
   border-bottom: 2px solid transparent;
   line-height: 1;
@@ -164,16 +117,7 @@ body.dark nav a.activo {
   font-size: 14px;
 }
 
-/* ========== PÁGINA PRINCIPAL ========== */
-main {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 60px 20px 0 20px;
-  flex-direction: column;
-}
-
+/* ========== HERO DE PÁGINA PRINCIPAL ========== */
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -184,15 +128,17 @@ main {
 }
 
 .hero-text {
-  font-weight: 501;
-  text-transform: uppercase;
-  font-size: 8vw;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  transform: scaleY(2.2);
-  transform-origin: top;
-  color: #000;
-}
+    font-weight: 501;
+    text-transform: uppercase;
+    font-size: 8vw;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    transform: scaleY(2.2);
+    transform-origin: top;
+    color: #000;
+    margin-top: 40px; /* ✅ AGREGADO para bajarlo */
+  }
+  
 
 .hero-container::after {
   content: "";
@@ -217,6 +163,7 @@ main {
   color: inherit;
 }
 
+/* ========== PERSONAJE CENTRAL ========== */
 .character {
   position: absolute;
   bottom: -15%;
@@ -230,111 +177,17 @@ main {
 .character img {
   width: 100%;
   height: auto;
-  transform: scaleX(1);
   transition: transform 0.3s ease;
 }
 
 /* ========== FOOTER ========== */
 footer {
   text-align: right;
-  padding: 5px 20px;
+  padding: 20px;
   font-size: 12px;
   border-top: 1px solid #ddd;
-  margin-top: -40px;
-}
-
-/* ========== ACERCA DE MÍ ========== */
-.about-page {
-  background-color: #f4eddb;
-  color: #222;
-}
-
-.hero-about {
-  text-align: center;
-  padding: 4em 1em 2em;
-}
-
-.hero-about h1 {
-  font-size: 4em;
-  letter-spacing: 2px;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.custom-button {
+  margin-top: auto;
   background-color: transparent;
-  border: 2px solid #000;
-  color: #000;
-  padding: 0.6em 1.4em;
-  font-size: 1em;
-  cursor: pointer;
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  margin-top: 1.5em;
-}
-
-.custom-button:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.about-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3em;
-  gap: 2em;
-  flex-wrap: wrap;
-}
-
-.profile-img {
-  width: 200px;
-  height: auto;
-  object-fit: cover;
-  border: 4px solid #bfa873;
-  background-color: #d2ba8a;
-  border-radius: 10px;
-}
-
-.about-text {
-  max-width: 600px;
-  font-size: 1.1em;
-  line-height: 1.6em;
-  text-align: left;
-}
-
-.about-quote {
-  max-width: 700px;
-  margin: 3em auto;
-  padding-left: 2em;
-  border-left: 3px solid #999;
-  font-style: italic;
-  position: relative;
-}
-
-.about-quote blockquote {
-  margin: 0;
-  color: #444;
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-.about-quote blockquote::before {
-  content: "\201C";
-  font-size: 3em;
-  color: #ccc;
-  position: absolute;
-  left: -0.4em;
-  top: -0.2em;
-}
-
-.about-quote footer {
-  margin-top: 1em;
-  text-align: right;
-  font-weight: bold;
-  color: #666;
 }
 
 /* ========== RESPONSIVE ========== */
@@ -361,17 +214,5 @@ footer {
   .mode-toggle {
     font-size: 12px;
   }
-
-  .hero-about h1 {
-    font-size: 3em;
-  }
-
-  .about-content {
-    flex-direction: column;
-    padding: 2em;
-  }
-
-  .about-text {
-    text-align: center;
-  }
 }
+
