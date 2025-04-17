@@ -8,17 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/acercade.css">
-  
 </head>
 <body class="about-page">
 
   <header>
-    <div class="logo">LM</div>
+    <a href="index.html" class="logo">LM</a>
     <nav>
-      <a href="index.html">TRABAJOS</a>
-      <a href="acercade-mi.html" class="activo">ACERCA DE MI</a>
-      <a href="#">OPINIONES</a>
-      <a href="#">ARCHIVOS</a>
+      <a href="trabajos.html">TRABAJOS</a>
+      <a href="acerca-de-mi.html" class="activo">ACERCA DE MI</a>
+      <a href="opiniones.html">OPINIONES</a>
     </nav>
     <div class="mode-toggle" onclick="toggleMode()">
       🌓 <span id="modeText">MODO OSCURO</span>
@@ -28,15 +26,15 @@
   <main>
     <section class="hero-about">
       <h1>Acerca de mí</h1>
-      <button class="custom-button">CONTACTAR</button>
+      <button id="boton-contacto" class="custom-button">CONTACTAR</button>
     </section>
 
     <section class="about-content">
       <img src="./Image/Lizeth Martinez.png" alt="Foto de perfil" class="profile-img" />
       <div class="about-text">
-        <p>¡Hola! Soy Lizeth Martínez, desarrolladora full stack, creativa y amante de la web. Me encanta construir experiencias digitales que sean funcionales, humanas y un poquito mágicas. Mi misión es que el internet siga siendo un espacio inclusivo, creativo y único para todos.</p>
-        <p>He creado desde portfolios interactivos hasta aplicaciones con backend robusto, siempre con un enfoque en el detalle y el diseño accesible. Me gusta experimentar con CSS, integrar animaciones sutiles y trabajar en proyectos que mezclan arte con código.</p>
-        <p>Actualmente colaboro con pequeños equipos de diseño y desarrollo freelance. También dedico tiempo a proyectos personales, como blogs visuales, efectos solo con HTML/CSS, y mini-sitios que exploran ideas extrañas (¡y divertidas!).</p>
+        <p>¡Hola! Soy Lizeth Martínez, desarrolladora full stack, creativa y amante de la web...</p>
+        <p>He creado desde portfolios interactivos hasta aplicaciones con backend robusto...</p>
+        <p>Actualmente colaboro con pequeños equipos de diseño y desarrollo freelance...</p>
         <p>Además de programar, soy fan de las películas de culto, los juegos de acertijos, el café fuerte y las playlists nostálgicas.</p>
       </div>
     </section>
@@ -44,19 +42,40 @@
     <section class="about-quote">
       <blockquote>
         <p>
-          La palabra que mejor describe a Lizeth es <em>valiente</em>. Se siente como en casa en los márgenes creativos de la web, convirtiendo ideas locas en experiencias cálidas y funcionales.
+          La palabra que mejor describe a Lizeth es <em>valiente</em>. Se siente como en casa en los márgenes creativos de la web, convirtiendo ideas locas en experiencias cálidas y funcionales. 
+        </p>
+        <p>
+          No teme aprender tecnologías nuevas, romper cosas para entenderlas o tomar caminos poco convencionales. Su valor está en la forma en que enfrenta lo desconocido con curiosidad, compromiso y una creatividad que siempre busca sorprender.
         </p>
         <footer>— Diana Avenir</footer>
       </blockquote>
     </section>
+    
 
     <div class="about-text centered">
-        <p>
-          ¿Te gusta mi trabajo? Compartirlo con otras personas es la mejor forma de apoyarme 💛<br>
-          También puedes ver mis diseños en Etsy o invitarme un café ☕ para seguir creando contenido auténtico.
-        </p>
-      </div>
-      
+      <p>
+        ¿Te gusta mi trabajo? Compartirlo con otras personas es la mejor forma de apoyarme 💛<br>
+        También puedes ver mi CV o invitarme un café ☕ para seguir creando contenido auténtico.
+      </p>
+    </div>
+
+    <div class="download-cv">
+      <a href="./Image/CV Andrea Lizet Martinez Carrillo-1.pdf" download>Descargar mi Hoja de Vida</a>
+    </div>
+
+    <!-- 🌱 NUEVA SECCIÓN DE REFLEXIÓN -->
+    <section class="reflexion">
+      <h2>Reflexión de mi camino como desarrolladora Java</h2>
+      <p>
+        Desde que comencé en el mundo del desarrollo, he atravesado momentos de curiosidad, frustración y satisfacción. Cada línea de código escrita ha sido una lección, y cada proyecto un escalón hacia una versión más preparada de mí.
+      </p>
+      <p>
+        Me siento orgullosa del crecimiento que he logrado, especialmente en tecnologías como HTML, CSS, JavaScript y Java. Sin embargo, reconozco que aún hay mucho por explorar: quiero profundizar más en arquitectura backend, patrones de diseño y mejorar mis habilidades en estructuras de datos.
+      </p>
+      <p>
+        Mis metas a corto plazo son fortalecer mi portafolio, colaborar en proyectos reales y seguir perfeccionando mi lógica. A largo plazo, aspiro a ser una desarrolladora líder que inspire y construya soluciones innovadoras con impacto real.
+      </p>
+    </section>
   </main>
 
   <footer>
@@ -66,5 +85,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-

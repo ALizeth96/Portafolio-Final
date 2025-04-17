@@ -8,36 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/acercade.css">
-
 </head>
 <body>
+  <header>
+    <a href="index.html" class="logo">LM</a>
+    <nav>
+      <a href="trabajos.html">TRABAJOS</a>
+      <a href="acerca-de-mi.html">ACERCA DE MI</a>
+      <a href="opiniones.html">OPINIONES</a> <!-- ✅ Así debe estar -->
+    </nav>
+    <div class="mode-toggle" onclick="toggleMode()">
+      🌓 <span id="modeText">MODO OSCURO</span>
+    </div>
+  </header>
 
-<header>
-  <div class="logo">LM</div>
-  <nav>
-    <a href="#">TRABAJOS</a>
-    <a href="acerca-de-mi.html" class="activo">ACERCA DE MI</a>
-    <a href="#">OPINIONES</a>
-    <a href="#">ARCHIVOS</a>
-  </nav>
-  <div class="mode-toggle" onclick="toggleMode()">
-    🌓 <span id="modeText">MODO</span>
-  </div>
-</header>
-
-<main>
+  <!-- Línea decorativa fija, editable -->
   <div class="hero-container">
     <h1 class="hero-text">
       LIZETH MARTINEZ<br>
       <span class="subline">FULL STACK DEVELOPER</span>
     </h1>
-
+    <!-- Línea decorativa colocada dentro para mantener posicionamiento -->
+    <div class="linea-inicio"></div>
     <div class="character" id="character">
       <img src="./Image/Liz 3 (1).png" alt="Tu personaje" />
     </div>
   </div>
-</main>
 
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

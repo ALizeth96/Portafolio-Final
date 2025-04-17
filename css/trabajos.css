@@ -1,0 +1,310 @@
+
+  /* BOTÓN DESTACADO */
+  .boton-tiempo {
+    background-color: transparent;
+    border: 2px solid #000;
+    color: #000;
+    padding: 0.6em 1.4em;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 1.5em;
+    position: relative;
+    z-index: 1;
+    border-radius: 6px;
+  }
+  
+  .boton-tiempo:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+  }
+
+  
+  
+  /* DESCRIPCIÓN CENTRAL */
+  .descripcion-trabajo {
+    max-width: 650px;
+    margin: 0 auto 3em auto;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #222;
+    text-align: center;
+  }
+  
+
+  .descripcion-trabajo a:hover {
+    text-decoration: underline;
+  }
+  
+  /* GALERÍA DE PROYECTOS */
+  .galeria-trabajo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 0 1em 3em;
+  }
+  
+  .galeria-trabajo img {
+    width: 280px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  
+  /* ========== RESPONSIVE ========== */
+  @media screen and (max-width: 768px) {
+    .trabajo-section h1 {
+      font-size: 3.5em;
+      transform: scaleY(1.5) scaleX(1);
+      margin-bottom: 1em;
+    }
+  
+    .descripcion-trabajo {
+      font-size: 1em;
+      padding: 0 1em;
+    }
+  
+    .galeria-trabajo {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .galeria-trabajo img {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
+  /* 🌙 MODO OSCURO ACTIVADO */
+  body.trabajo-page.dark {
+    background-color: #111 !important;
+    color: white !important;
+  }
+  
+  
+  body.trabajo-page.dark .trabajo-section h1 {
+    color: #eee;
+  }
+  
+  body.trabajo-page.dark .boton-tiempo {
+    border-color: #eee;
+    color: #eee;
+  }
+  
+  body.trabajo-page.dark .boton-tiempo:hover {
+    background-color: #eee;
+    color: #000;
+  }
+  
+  body.trabajo-page.dark .descripcion-trabajo {
+    color: #ccc;
+  }
+
+  
+  body.trabajo-page.dark .galeria-trabajo img {
+    background-color: #333;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+  }
+  /* ========== HERO TRABAJO (ESTILO IGUAL A ACERCA DE MÍ) ========== */
+
+.hero-trabajo {
+  padding: 5em 1em 3em;
+  text-align: center;
+}
+
+.hero-trabajo h1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  letter-spacing: 5px;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+  transform: scaleY(2.7) scaleX(1);
+  transform-origin: center top;
+  position: relative;
+  top: -100px;
+}
+
+body.trabajo-page.dark .hero-trabajo h1 {
+  color: #fff;
+}
+.proyecto {
+  max-width: 300px;
+  text-align: center;
+}
+
+.descripcion-proyecto {
+  text-align: justify;
+  padding: 1em;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.descripcion-proyecto h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  color: #000000;
+}
+
+body.dark .descripcion-proyecto h3 {
+  color: #ffffff; /* modo oscuro */
+}
+
+.galeria-boton {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1.2em;
+  border: 2px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.galeria-boton:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+body.trabajo-page.dark .descripcion-proyecto {
+  color: #ddd;
+}
+.descripcion-proyecto a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.5em 1em;
+  border: 2px solid #000;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  transition: 0.3s;
+}
+
+.descripcion-proyecto a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.galeria-container {
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.galeria-titulo {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: scaleY(2.5);
+  margin-bottom: 1rem;
+}
+
+.galeria-boton {
+  background-color: transparent;
+  border: 1.5px solid #000;
+  padding: 0.6em 1.5em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1em 0;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+.galeria-boton:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.galeria-descripcion {
+  max-width: 750px;
+  margin: 0 auto 2em auto;
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 0 15px;
+}
+
+.linea-divisora {
+  height: 1px;
+  background-color: #616060;
+  margin: 2em auto;
+  width: 100%;
+}
+.galeria-grid {
+  margin-top: 0.5rem; /* 🔼 lo bajamos más para acercar las cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em; /* 💡 da espacio entre tarjetas sin exagerar */
+  padding-bottom: 1em;
+}
+
+
+.card-proyecto {
+  border: 0.5px solid #00000077;
+  padding: 1em;
+  background-color: #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-proyecto img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* 🌙 Modo oscuro */
+body.trabajo-page.dark .galeria-boton {
+  border-color: #fff;
+  color: #fff;
+}
+
+body.trabajo-page.dark .galeria-boton:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+body.trabajo-page.dark .card-proyecto {
+  background-color: #1a1a1a;
+  border-color: #333;
+}
+
+body.trabajo-page.dark .linea-divisora {
+  background-color: #ffffff;
+}
+
+.descripcion-proyecto .galeria-boton {
+  display: block;
+  width: fit-content;
+  margin: 1em auto 0 auto; /* esto lo centra horizontalmente */
+  text-align: center;
+}
+
+.intro-portafolio {
+  margin-bottom: 0.5rem;
+  max-width: 850px;
+  margin: 0 auto 0rem auto;  /* 🔽 sin margen arriba */
+  padding-top: 0rem;       /* 🔽 menos espacio dentro */
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify; /* 👉 Justificación del texto */
+}
+
+.boton-tiempo {
+  margin-bottom: 0.5rem;
+}
+
+body.dark .intro-portafolio {
+  color: #ddd;
+}
