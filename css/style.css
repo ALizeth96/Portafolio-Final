@@ -1,13 +1,11 @@
 /* ========== RESET GENERAL ========== */
-
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* 🔒 Esto elimina el scroll */
   height: 100%;
   width: 100%;
+  overflow: hidden;   
 }
-
 
 body {
   overflow-y: scroll;
@@ -31,25 +29,18 @@ body.dark nav a {
   font-weight: 400;
 }
 
-/* ========== Esta es la linea que esta abajo del nav la primera no la seguda ========== */
-body.dark header { 
-  background-color: #111;
-  border-bottom: 1px solid #fff;
-}
-
-/* ========== Este es el logo la bolita ========== */
 body.dark .logo {
   background-color: #fff;
   color: #000;
 }
 
-
-/* ========== Estas son las letras en blanco de LIZETH MARTINEZ ========== */
 body.dark .hero-text {
   color: #ececec;
 }
 
-
+body.dark .linea-inicio {
+  background-color: #fff;
+}
 
 /* ========== HEADER ========== */
 header {
@@ -57,10 +48,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000;/* border-bottom: 1px solid #000000; QUITADO para evitar doble línea */
   width: 100%;
   max-width: 100vw;
   gap: 20px;
+}
+
+body.dark header {
+  border-bottom: 1px solid #fff;
 }
 
 .logo {
@@ -99,12 +94,10 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-left: auto; /* empuja hacia la derecha */
-  padding-right: 30px; /* 💡 agrega espacio desde el borde derecho */
+  margin-left: auto;
+  padding-right: 30px;
   cursor: pointer;
 }
-
-
 
 /* ========== HERO DE PÁGINA PRINCIPAL ========== */
 .hero-container {
@@ -119,17 +112,16 @@ nav a {
 }
 
 .hero-text {
-    font-weight: 501;
-    text-transform: uppercase;
-    font-size: 8vw;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    transform: scaleY(2.2);
-    transform-origin: top;
-    color: #000;
-    margin-top: 40px; /* ✅ AGREGADO para bajarlo */
-  }
-  
+  font-weight: 501;
+  text-transform: uppercase;
+  font-size: 8vw;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  transform: scaleY(2.2);
+  transform-origin: top;
+  color: #000;
+  margin-top: 40px;
+}
 
 .hero-container::after {
   content: "";
@@ -157,7 +149,7 @@ nav a {
 /* ========== PERSONAJE CENTRAL ========== */
 .character {
   position: absolute;
-  bottom: 4%;
+  bottom: -0%; /* corregido: antes estaba en 4% */
   left: 50%;
   transform: translateX(-50%);
   width: 225px;
@@ -176,32 +168,18 @@ footer {
   text-align: right;
   padding: 20px;
   font-size: 12px;
-  border-top: 1px solid #b1adad;
   margin-top: auto;
   background-color: transparent;
   margin-top: 90px;
 }
 
+/* ========== LÍNEA INFERIOR DEL HERO ========== */
 .linea-inicio {
   position: absolute;
-  bottom: 15%; /* ajusta según necesites */
+  bottom: 15%;
   left: 0;
   width: 100vw;
   height: 1px;
   background-color: #000;
-  z-index: 0; /* 🔽 detrás del personaje */
+  z-index: 0;
 }
-
-body.dark .linea-inicio {
-  background-color: #fff;
-}
-
-
-
-
-
-
-
-
-
-

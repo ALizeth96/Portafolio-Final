@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,10 +14,9 @@
   <header>
     <a href="index.html" class="logo">LM</a>
     <nav>
-        <a href="trabajos.html">TRABAJOS</a>
-        <a href="acerca-de-mi.html">ACERCA DE MI</a>
-        <a href="opiniones.html" class="activo">OPINIONES</a>
-        
+      <a href="trabajos.html">TRABAJOS</a>
+      <a href="acerca-de-mi.html">ACERCA DE MI</a>
+      <a href="opiniones.html" class="activo">OPINIONES</a>
     </nav>
     <div class="mode-toggle" onclick="toggleMode()">
       🌓 <span id="modeText">MODO OSCURO</span>
@@ -28,7 +27,6 @@
     <!-- Hero con título y botón, ambos centrados -->
     <section class="hero-opiniones">
       <h1>OPINIONES</h1>
-
     </section>
 
     <!-- Contenedor de opiniones -->
@@ -53,29 +51,29 @@
 
     <!-- Botón ver más reseñas -->
     <div style="text-align: center;">
-        <button class="custom-button" onclick="abrirFormulario()">Comparte tu experiencia</button>
-      </div>
-
-
-  <!-- FORMULARIO MODAL -->
-  <div id="formularioModal" class="modal-opinion">
-    <div class="modal-contenido elegante">
-      <button class="cerrar-modal" onclick="cerrarFormulario()">✕</button>
-      <h2>Deja tu opinión</h2>
-      <p class="descripcion-form">Tu experiencia es importante y me ayuda a seguir mejorando 🤍</p>
-      <form id="opinionForm">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
-        </div>
-        <div class="form-group">
-          <label for="comentario">Opinión</label>
-          <textarea id="comentario" name="comentario" rows="5" required placeholder="Escribe tu opinión aquí..."></textarea>
-        </div>
-        <button type="submit" class="enviar-btn">Enviar</button>
-      </form>
+      <button class="custom-button" onclick="abrirFormulario()">Comparte tu experiencia</button>
     </div>
-  </div>
+
+    <!-- FORMULARIO MODAL -->
+    <div id="formularioModal" class="modal-opinion">
+      <div class="modal-contenido elegante">
+        <button class="cerrar-modal" onclick="cerrarFormulario()">✕</button>
+        <h2>Deja tu opinión</h2>
+        <p class="descripcion-form">Tu experiencia es importante y me ayuda a seguir mejorando 🤍</p>
+        <form id="opinionForm">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label for="comentario">Opinión</label>
+            <textarea id="comentario" name="comentario" rows="5" required placeholder="Escribe tu opinión aquí..."></textarea>
+          </div>
+          <button type="submit" class="enviar-btn">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer-opiniones">
@@ -85,7 +83,7 @@
   <!-- JS -->
   <script src="js/script.js"></script>
   <script>
-    // Año automático
+    // Año automático en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>

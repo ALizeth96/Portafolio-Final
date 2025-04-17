@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lizeth Martinez - Personalizado</title>
+  <title>Lizeth Martínez - Portafolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/acercade.css">
 </head>
+
 <body>
   <header>
     <a href="index.html" class="logo">LM</a>
     <nav>
       <a href="trabajos.html">TRABAJOS</a>
       <a href="acerca-de-mi.html">ACERCA DE MI</a>
-      <a href="opiniones.html">OPINIONES</a> <!-- ✅ Así debe estar -->
+      <a href="opiniones.html">OPINIONES</a>
     </nav>
     <div class="mode-toggle" onclick="toggleMode()">
       🌓 <span id="modeText">MODO OSCURO</span>
     </div>
   </header>
 
-  <!-- Línea decorativa fija, editable -->
-  <div class="hero-container">
+  <main class="hero-container">
     <h1 class="hero-text">
       LIZETH MARTINEZ<br>
       <span class="subline">FULL STACK DEVELOPER</span>
     </h1>
-    <!-- Línea decorativa colocada dentro para mantener posicionamiento -->
-    <div class="linea-inicio"></div>
-    <div class="character" id="character">
-      <img src="./Image/Liz 3 (1).png" alt="Tu personaje" />
-    </div>
-  </div>
 
+  </main>
+
+  <!-- ✅ Muñeca flotante encima de todo -->
+  <div id="character" class="character">
+    <img src="./Image/Liz 3 (1).png" alt="Tu personaje">
+  </div>
+  
+  <!-- Línea horizontal decorativa -->
+  <div class="linea-inicio"></div>
+  
+  <footer>
+    &copy; 2025 Lizeth Martínez
+  </footer>
+  
   <script src="js/script.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+  

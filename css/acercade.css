@@ -280,6 +280,23 @@ body.about-page.dark .reflexion {
   border-left: 4px solid #fff;
 }
 
+.linea-final {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20rem 30 1rem;
+}
+
+body.about-page.dark .linea-final {
+  background-color: #fff;
+}
+
+footer {
+  margin-top: 5px;
+}
+
+
+
 
 
 

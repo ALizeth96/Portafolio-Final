@@ -1,17 +1,15 @@
-// 🧍 Movimiento de la muñeca al mover el mouse
+// 🧍 Movimiento de la muñeca al mover el mouse (solo si existe)
 const character = document.getElementById('character');
-const characterImg = character?.querySelector('img'); // Prevención por si no carga bien
+const characterImg = character?.querySelector('img');
 
 if (character && characterImg) {
   document.addEventListener('mousemove', (e) => {
     const centerX = window.innerWidth / 2;
     const posX = e.clientX;
-    const distance = (posX - centerX) / centerX; // Valor entre -1 y 1
+    const distance = (posX - centerX) / centerX;
     const maxOffset = 40;
 
-    // Movimiento horizontal de la muñeca
     character.style.left = `${50 + distance * maxOffset}%`;
-   // Volteo de la imagen según la dirección del mouse
     characterImg.style.transform = distance > 0 ? 'scaleX(1)' : 'scaleX(-1)';
   });
 }
@@ -43,31 +41,16 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     if (modeText) modeText.textContent = 'MODO OSCURO';
   }
-});
 
-// 🧠 Funcionalidad de "Pierde el tiempo aquí"
-function perderTiempo() {
-  alert("¡Ya estás perdiendo el tiempo aquí 😄!");
-}
-
-function abrirFormulario() {
-  document.getElementById('formularioModal').style.display = 'flex';
-}
-
-function cerrarFormulario() {
-  document.getElementById('formularioModal').style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Botón contacto (solo en acerca de mí)
-  const btn = document.getElementById("boton-contacto");
-  if (btn) {
-    btn.addEventListener("click", function () {
+  // Contacto (solo en acerca-de-mi)
+  const btnContacto = document.getElementById("boton-contacto");
+  if (btnContacto) {
+    btnContacto.addEventListener("click", function () {
       window.location.href = "mailto:andrealizetm091@gmail.com";
     });
   }
 
-  // Botón descargar CV (solo en acerca de mí)
+  // Descargar CV (si existe el botón con ID)
   const cvBtn = document.getElementById('cvDownload');
   if (cvBtn) {
     cvBtn.addEventListener('click', () => {
@@ -75,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Formulario opiniones (solo en opiniones.html)
+  // Opiniones (solo en opiniones.html)
   const opinionForm = document.getElementById('opinionForm');
   const opinionesContainer = document.querySelector('.opiniones-container');
 
@@ -109,3 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+// Modal formulario
+function abrirFormulario() {
+  const modal = document.getElementById('formularioModal');
+  if (modal) modal.style.display = 'flex';
+}
+
+function cerrarFormulario() {
+  const modal = document.getElementById('formularioModal');
+  if (modal) modal.style.display = 'none';
+}
+
+// Mensaje divertido en botón
+function perderTiempo() {
+  alert("¡Ya estás perdiendo el tiempo aquí 😄!");
+}
