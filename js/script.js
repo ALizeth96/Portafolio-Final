@@ -1,56 +1,50 @@
-// 🧍 Movimiento de la muñeca al mover el mouse (solo si existe)
+// 🧍 Movimiento de la muñeca (si existe)
 const character = document.getElementById('character');
 const characterImg = character?.querySelector('img');
 
 if (character && characterImg) {
   document.addEventListener('mousemove', (e) => {
     const centerX = window.innerWidth / 2;
-    const posX = e.clientX;
-    const distance = (posX - centerX) / centerX;
-    const maxOffset = 40;
+    const distance = (e.clientX - centerX) / centerX;
+    const offset = 40;
 
-    character.style.left = `${50 + distance * maxOffset}%`;
+    character.style.left = `${50 + distance * offset}%`;
     characterImg.style.transform = distance > 0 ? 'scaleX(1)' : 'scaleX(-1)';
   });
 }
 
-// 🌙 Alternar modo oscuro con guardado en localStorage
+// 🌙 Alternar modo oscuro con localStorage
 function toggleMode() {
   const body = document.body;
   const modeText = document.getElementById('modeText');
-
   body.classList.toggle('dark');
+
   const isDark = body.classList.contains('dark');
-
-  if (modeText) {
-    modeText.textContent = isDark ? 'MODO CLARO' : 'MODO OSCURO';
-  }
-
-  localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+  localStorage.setItem('darkMode', isDark);
+  if (modeText) modeText.textContent = isDark ? 'MODO CLARO' : 'MODO OSCURO';
 }
 
 // ✅ Aplicar modo guardado al cargar
 window.addEventListener('DOMContentLoaded', () => {
-  const savedMode = localStorage.getItem('darkMode');
-  const body = document.body;
+  // 🌓 Modo oscuro persistente
+  const isDark = localStorage.getItem('darkMode') === 'true';
+  document.body.classList.toggle('dark', isDark);
   const modeText = document.getElementById('modeText');
+  if (modeText) modeText.textContent = isDark ? 'MODO CLARO' : 'MODO OSCURO';
 
-  if (savedMode === 'true') {
-    body.classList.add('dark');
-    if (modeText) modeText.textContent = 'MODO CLARO';
-  } else {
-    if (modeText) modeText.textContent = 'MODO OSCURO';
-  }
+  // 🗓 Año automático en footer
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
-  // Contacto (solo en acerca-de-mi)
-  const btnContacto = document.getElementById("boton-contacto");
-  if (btnContacto) {
-    btnContacto.addEventListener("click", function () {
+  // 📩 Botón de contacto
+  const contactoBtn = document.getElementById("boton-contacto");
+  if (contactoBtn) {
+    contactoBtn.addEventListener("click", () => {
       window.location.href = "mailto:andrealizetm091@gmail.com";
     });
   }
 
-  // Descargar CV (si existe el botón con ID)
+  // 📄 Botón para descargar CV
   const cvBtn = document.getElementById('cvDownload');
   if (cvBtn) {
     cvBtn.addEventListener('click', () => {
@@ -58,25 +52,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Opiniones (solo en opiniones.html)
+  // 🗣 Opiniones dinámicas
   const opinionForm = document.getElementById('opinionForm');
   const opinionesContainer = document.querySelector('.opiniones-container');
 
   if (opinionForm && opinionesContainer) {
     const opinionesGuardadas = JSON.parse(localStorage.getItem('opiniones')) || [];
 
+    // Mostrar opiniones previas
     opinionesGuardadas.forEach(({ nombre, comentario }) => {
-      agregarOpinionAlDOM(nombre, comentario);
+      agregarOpinion(nombre, comentario);
     });
 
-    opinionForm.addEventListener('submit', function (e) {
+    opinionForm.addEventListener('submit', (e) => {
       e.preventDefault();
-
       const nombre = document.getElementById('nombre').value.trim();
       const comentario = document.getElementById('comentario').value.trim();
 
       if (nombre && comentario) {
-        agregarOpinionAlDOM(nombre, comentario);
+        agregarOpinion(nombre, comentario);
         opinionesGuardadas.push({ nombre, comentario });
         localStorage.setItem('opiniones', JSON.stringify(opinionesGuardadas));
         opinionForm.reset();
@@ -84,16 +78,31 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    function agregarOpinionAlDOM(nombre, comentario) {
-      const nuevaOpinion = document.createElement('blockquote');
-      nuevaOpinion.className = 'opinion-estilo';
-      nuevaOpinion.innerHTML = `<p>${comentario}</p><footer>— ${nombre}</footer>`;
-      opinionesContainer.appendChild(nuevaOpinion);
+    function agregarOpinion(nombre, comentario) {
+      const nueva = document.createElement('blockquote');
+      nueva.className = 'opinion-estilo';
+      nueva.innerHTML = `<p>${comentario}</p><footer>— ${nombre}</footer>`;
+      opinionesContainer.appendChild(nueva);
     }
   }
+
+  // 🔼 Mostrar/Ocultar contenido de tarjetas
+  document.querySelectorAll('.ver-mas-boton').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.card-proyecto');
+      const extraContent = card.querySelector('.contenido-extra');
+
+      if (!extraContent) return;
+
+      const isHidden = extraContent.style.display === 'none' || extraContent.style.display === '';
+      extraContent.style.display = isHidden ? 'block' : 'none';
+      button.textContent = isHidden ? 'Ver menos' : 'Ver más';
+      card.classList.toggle('expanded', isHidden);
+    });
+  });
 });
 
-// Modal formulario
+// 🎭 Modal del formulario
 function abrirFormulario() {
   const modal = document.getElementById('formularioModal');
   if (modal) modal.style.display = 'flex';
@@ -104,7 +113,7 @@ function cerrarFormulario() {
   if (modal) modal.style.display = 'none';
 }
 
-// Mensaje divertido en botón
 function perderTiempo() {
   alert("¡Ya estás perdiendo el tiempo aquí 😄!");
 }
+

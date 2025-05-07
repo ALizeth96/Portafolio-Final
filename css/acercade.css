@@ -1,4 +1,15 @@
 /* ========== ESTILOS EXCLUSIVOS PARA ACERCA DE MÍ ========== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
 
 body.about-page {
   background-color: #f7f7f7;
@@ -284,8 +295,9 @@ body.about-page.dark .reflexion {
   width: 100%;
   height: 1px;
   background-color: #ccc;
-  margin: 20rem 30 1rem;
+  margin: 2rem 0;
 }
+
 
 body.about-page.dark .linea-final {
   background-color: #fff;

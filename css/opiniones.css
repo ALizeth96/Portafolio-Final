@@ -1,4 +1,3 @@
-
 /* ========== HERO OPINIONES (IGUAL A ACERCA DE MÍ) ========== */
 body.opiniones-page {
   background-color: #f7f7f7;
@@ -20,32 +19,26 @@ body.opiniones-page.dark {
   font-size: clamp(2rem, 8vw, 5rem);
   letter-spacing: 2px;
   text-transform: uppercase;
-  transform: scaleY(2.7) scaleX(0.8);
+  transform: scaleY(2.2) scaleX(0.85);
   transform-origin: center top;
   position: relative;
-  top: -100px;
+  top: -40px;
 }
 
 body.opiniones-page.dark .hero-opiniones h1 {
   color: #fff;
 }
 
-
-
-
-/* ========== CADA OPINIÓN INDIVIDUAL ========== */
-/* ========== OPINIONES TIPO CITA PROFESIONAL ========== */
-
+/* ========== CONTENEDOR DE OPINIONES ========== */
 .opiniones-container {
   max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
+  margin: 0 auto 3em;
+  padding: 0 1.5em;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 2em;
 }
 
-/* Cada opinión como una cita refinada */
 .opinion-estilo {
   border-left: 3px solid #aaa;
   padding-left: 1.5em;
@@ -54,7 +47,10 @@ body.opiniones-page.dark .hero-opiniones h1 {
   line-height: 1.8;
   color: #333;
   position: relative;
-  margin: 0;
+  background: transparent;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .opinion-estilo p {
@@ -69,24 +65,6 @@ body.opiniones-page.dark .hero-opiniones h1 {
   font-size: 0.9rem;
   color: #666;
   font-style: normal;
-}
-
-/* Animación sutil al cargar */
-.opinion-estilo {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.opinion-estilo:nth-child(2) { animation-delay: 0.1s; }
-.opinion-estilo:nth-child(3) { animation-delay: 0.2s; }
-.opinion-estilo:nth-child(4) { animation-delay: 0.3s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* 🌙 Modo oscuro */
@@ -116,25 +94,13 @@ body.dark .opinion-estilo footer {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   border-radius: 6px;
-  margin-top: 2em;
+  margin: 2em auto 0;
   display: block;
-  align-self: center; /* ✅ Esto lo centra dentro del flex container */
 }
 
 .boton-opinion:hover {
   background-color: #000;
   color: #fff;
-}
-
-/* ========== MODO OSCURO ========== */
-body.dark .opinion {
-  background-color: #1a1a1a;
-  border-left: 5px solid #fff;
-  color: #ececec;
-}
-
-body.dark .autor-opinion {
-  color: #aaa;
 }
 
 body.dark .boton-opinion {
@@ -147,7 +113,28 @@ body.dark .boton-opinion:hover {
   color: #000;
 }
 
-/* ========== MODAL FORMULARIO ========== */
+/* ========== ANIMACIONES ========== */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== FOOTER ========== */
+.footer-opiniones {
+  padding: 1.5em 2em;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 4em;
+  border-top: 1px solid #ccc;
+}
+
+body.opiniones-page.dark .footer-opiniones {
+  color: #aaa;
+  border-top: 1px solid #555;
+}
 .modal-opinion {
   position: fixed;
   top: 0;
@@ -159,214 +146,134 @@ body.dark .boton-opinion:hover {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
 }
 
 .modal-contenido.elegante {
-  background: #fff;
-  padding: 2.5rem 2rem 2rem;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 500px;
+  background: #111;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 580px;
   font-family: 'Oswald', sans-serif;
+  color: #fff;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-  animation: fadeIn 0.3s ease;
-  border: 1px solid #e1e1e1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.8rem;
+  box-sizing: border-box;
 }
 
+body.dark .modal-contenido.elegante {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+
+body.dark .cerrar-modal:hover {
+  color: #fff;
+}
 .modal-contenido.elegante h2 {
   font-size: 2rem;
-  margin-bottom: 0.3rem;
   text-align: center;
-  width: 100%;
+  margin-bottom: 0rem;
 }
 
 .descripcion-form {
   text-align: center;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  color: #666;
-  max-width: 400px;
+  font-size: 1rem;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.5;
+  max-width: 480px;
 }
 
-form#opinionForm {
-  width: 100%;
+body.dark .descripcion-form {
+  color: #ccc;
+}
+
+/* Contenedor del formulario */
+.modal-contenido form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: flex-start;  /* ⬅️ Alínea a la izquierda */
+  width: 100%;
+  max-width: 490px;
+  margin: 0 auto;
 }
 
-
-.modal-contenido.elegante .descripcion-form {
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
+/* Grupos de entrada */
 .form-group {
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
 .form-group label {
-  display: block;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #222;
   font-size: 0.95rem;
+  color: #ccc;
 }
+
+/* Inputs y Textarea alineados con los labels */
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  border: 1px solid #ccc;
+  padding: 1rem;
+  font-size: 1rem;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  font-family: 'Oswald', sans-serif;
+  border: 1px solid #444;
+  background-color: #1a1a1a;
+  color: #fff;
+  resize: vertical;
   box-sizing: border-box;
-  transition: border-color 0.3s;
+}
+.form-group textarea {
+  min-height: 140px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: #000;
-  background-color: #fff;
-}
-
-.enviar-btn {
-  align-self: center;
+  border-color: #fff;
   background-color: #000;
-  color: #fff;
-  padding: 12px 30px;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-} 
-.enviar-btn:hover {
-  background-color: #222;
-  transform: translateY(-2px);
+  outline: none;
 }
 
-  .cerrar-modal {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #999;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-
-.cerrar-modal:hover {
-  color: #000;
-}
-
-/* 🌙 Modo oscuro */
-body.dark .modal-contenido.elegante {
-  background-color: #121212;
-  border: 1px solid #444;
-  color: #fff;
-}
-
-body.dark .form-group label {
-  color: #ddd;
-}
-
-body.dark .form-group input,
-body.dark .form-group textarea {
-  background-color: #1a1a1a;
-  color: #eee;
-  border-color: #444;
-}
 
 body.dark .form-group input:focus,
 body.dark .form-group textarea:focus {
-  border-color: #eee;
-  background-color: #000;
+  border-color: #fff;
 }
 
-body.dark .cerrar-modal {
-  color: #aaa;
-}
-
-body.dark .cerrar-modal:hover {
+.enviar-btn {
+  align-self: center; /* ✅ Centra horizontalmente dentro del form */
+  background-color: transparent;
+  border: 2px solid #fff;
   color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-
-/* 🌙 MODO OSCURO */
-body.dark .modal-contenido {
-  background-color: #111;
-  color: #fff;
+.enviar-btn:hover {
+  background-color: #fff;
+  color: #000;
 }
 
-body.dark .modal-contenido h2 {
-  color: #fff;
-}
-
-body.dark .modal-contenido input,
-body.dark .modal-contenido textarea {
-  background-color: #1a1a1a;
-  color: #fff;
-  border: 1px solid #444;
-}
-
-body.dark .cerrar-btn {
+body.dark .enviar-btn {
   border-color: #fff;
   color: #fff;
 }
 
-body.dark .cerrar-btn:hover {
+body.dark .enviar-btn:hover {
   background-color: #fff;
   color: #000;
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-/*--------------opininoes footer---*/
-.footer-opiniones {
-  padding: 1.5em 2em;
-  text-align: right;
-  font-size: 0.85rem;
-  color: #555;
-  background-color: transparent;
-  margin-top: 4em;
-  border-top: 1px solid #ccc;
-}
-
-body.opiniones-page.dark .footer-opiniones {
-  color: #aaa;
-  border-top: 1px solid #555;
-}
-.footer-opiniones hr {
-  margin-top: 3em;
-}
-
-body.dark .footer-opiniones {
-  color: #aaa;
-}
-
-body.dark .footer-opiniones hr {
-  border-top: 1px solid #555;
-}
-
-.custom-button {
-  margin: 3rem auto 2rem auto;
-  border-radius: 6px;
+.boton-estilo {
   background-color: transparent;
   border: 2px solid #000;
   color: #000;
@@ -377,29 +284,31 @@ body.dark .footer-opiniones hr {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  border-radius: 8px;
   display: inline-block;
 }
 
-.custom-button:hover {
+.boton-estilo:hover {
   background-color: #000;
   color: #fff;
 }
 
-body.dark .custom-button {
+body.dark .boton-estilo {
   border-color: #fff;
   color: #fff;
 }
 
-body.dark .custom-button:hover {
+body.dark .boton-estilo:hover {
   background-color: #fff;
   color: #000;
 }
 
 .opiniones-scroll {
-  max-height: 400px;
+  max-height: 350px;
   overflow-y: auto;
   padding-right: 10px;
   scroll-behavior: smooth;
+  margin: 0 auto 2rem;
 }
 
 .opiniones-scroll::-webkit-scrollbar {
@@ -411,53 +320,60 @@ body.dark .custom-button:hover {
   border-radius: 4px;
 }
 
-body.dark .opiniones-scroll::-webkit-scro
-
-
-llbar-thumb {
+body.dark .opiniones-scroll::-webkit-scrollbar-thumb {
   background-color: #444;
 }
-
-.boton-ver-mas {
-  margin: 2em auto;
-  display: block;
+/* ESTILO UNIFICADO PARA BOTONES */
+.custom-button {
   background-color: transparent;
   border: 2px solid #000;
   color: #000;
   padding: 0.6em 1.4em;
   font-size: 1em;
-  cursor: pointer;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-.boton-ver-mas:hover {
+.custom-button:hover {
   background-color: #000;
   color: #fff;
 }
 
-body.dark .boton-ver-mas {
-  border-color: #eee;
-  color: #eee;
+/* CIERRE DEL MODAL */
+.cerrar-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cerrar-modal:hover {
+  color: #fff;
 }
 
-body.dark .boton-ver-mas:hover {
-  background-color: #eee;
-  color: #000;
-}
-
-
-@keyframes fadeInButton {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+  .hero-opiniones h1 {
+    transform: scaleY(1.4) scaleX(1);
+    font-size: 2.5rem;
+    top: -20px;
   }
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+
+  .opinion-estilo {
+    font-size: 1rem;
+    padding-left: 1em;
+    line-height: 1.6;
+  }
+
+  .footer-opiniones {
+    text-align: center;
   }
 }
-
